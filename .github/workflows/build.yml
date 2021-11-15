@@ -259,7 +259,7 @@ jobs:
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
           tags: |
-            ghcr.io/${{ github.repository_owner }}/fhem-experimental:${{ steps.buildVars.outputs.TAG_ROLLING }}
+            ghcr.io/${{ github.repository_owner }}/fhem-experimental-buster:${{ steps.buildVars.outputs.TAG_ROLLING }}
 
           build-args: |
             PLATFORM=linux
@@ -292,7 +292,7 @@ jobs:
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
           tags: |
-            ghcr.io/${{ github.repository_owner }}/fhem-minimal-experimental:${{ steps.buildVars.outputs.TAG_ROLLING }}
+            ghcr.io/${{ github.repository_owner }}/fhem-minimal-experimental-buster:${{ steps.buildVars.outputs.TAG_ROLLING }}
 
           build-args: |
             PLATFORM=linux
