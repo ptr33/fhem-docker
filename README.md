@@ -33,13 +33,12 @@ You may want to have a look to the [FHEM documentation sources](https://fhem.de/
 
 This image provides 2 different variants:
 
-* `latest` (default)
-* `dev`
+* `dev` (currently only this image is generated)
 
 You can use one of those variants by adding them to the docker image name like this:
 
 ```console
-docker pull fhem/fhem:latest
+docker pull ghcr.io/ptr33/fhem-experimental:dev
 ```
 
 If you do not specify any variant, `latest` will always be the default.
@@ -342,8 +341,8 @@ Follow initial setup steps:
 
     ```console
     sudo mkdir -p /docker/home
-    sudo curl -fsSL -o /docker/home/docker-compose.yml https://github.com/fhem/fhem-docker/raw/master/docker-compose.yml
-    sudo curl -fsSL -o /docker/home/.gitignore https://github.com/fhem/fhem-docker/raw/master/.gitignore
+    sudo curl -fsSL -o /docker/home/docker-compose.yml https://github.com/ptr33/fhem-docker/raw/master/docker-compose.yml
+    sudo curl -fsSL -o /docker/home/.gitignore https://github.com/ptr33/fhem-docker/raw/master/.gitignore
     ```
 
     Note that the sub-directory "home" will be the base prefix name for all    your Docker containers (e.g. resulting in home_SERVICE_1). This will also help to run multiple instances of your Stack on the same host, e.g. to separate production environment in /docker/home from development in /docker/home-dev.
@@ -397,7 +396,4 @@ Follow initial setup steps:
     cd /docker/home; sudo docker-compose up -d
     ```
 
-___
-[Production ![Build Status](https://travis-ci.com/fhem/fhem-docker.svg?branch=master)](https://travis-ci.com/fhem/fhem-docker)
 
-[Development ![Build Status](https://travis-ci.com/fhem/fhem-docker.svg?branch=dev)](https://travis-ci.com/fhem/fhem-docker)
