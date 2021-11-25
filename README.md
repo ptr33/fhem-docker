@@ -5,23 +5,23 @@ A basic Docker image for [FHEM](https://fhem.de/) house automation system, based
 
 ## Installation
 
-Pre-build images are available on [Docker Hub](https://hub.docker.com/r/fhem/).
-We recommend pulling from the [main repository](https://hub.docker.com/r/fhem/fhem/) to allow automatic download of the correct image for your system platform:
+Pre-build images are available on [GitHub container registry](https://github.com/ptr33/fhem-docker/pkgs/container/).
+We recommend pulling from the [main repository](https://github.com/ptr33/fhem-docker/pkgs/container/fhem-experimental) to allow automatic download of the correct image for your system platform:
 
 ```console
-docker pull fhem/fhem
+docker pull https://github.com/ptr33/fhem-docker/pkgs/container/fhem-experimental
 ```
 
 To start your container right away:
 
 ```console
-docker run -d --name fhem -p 8083:8083 fhem/fhem
+docker run -d --name fhem -p 8083:8083 https://github.com/ptr33/fhem-docker/pkgs/container/fhem-experimental
 ```
 
 Usually you want to keep your FHEM setup after a container was destroyed (or re-build) so it is a good idea to provide an external directory on your Docker host to keep that data:
 
 ```console
-docker run -d --name fhem -p 8083:8083 -v /some/host/directory:/opt/fhem fhem/fhem
+docker run -d --name fhem -p 8083:8083 -v /some/host/directory:/opt/fhem https://github.com/ptr33/fhem-docker/pkgs/container/fhem-experimental
 ```
 
 You will find more general information about using volumes from the Docker documentation for [Use volumes](https://docs.docker.com/storage/volumes/) and [Bind mounts](https://docs.docker.com/storage/bind-mounts/).
@@ -53,13 +53,11 @@ Note that any existing FHEM installation you are mounting into the container wil
 
 This is a multi-platform image, providing support for the following platforms:
 
-Linux:
+Linux: https://github.com/ptr33/fhem-docker/pkgs/container/fhem-experimental
 
-* `x86-64/AMD64` [Link](https://hub.docker.com/r/fhem/fhem-amd64_linux/)
-* `i386` [Link](https://hub.docker.com/r/fhem/fhem-i386_linux/)
-* `ARM32v5, armel` [Link](https://hub.docker.com/r/fhem/fhem-arm32v5_linux/)
-* `ARM32v7, armhf` [Link](https://hub.docker.com/r/fhem/fhem-arm32v7_linux/)
-* `ARM64v8, arm64` [Link](https://hub.docker.com/r/fhem/fhem-arm64v8_linux/)
+* `x86-64/AMD64`
+* `ARM32v7, armhf`
+* `ARM64v8, arm64`
 
 Windows:
 
