@@ -160,7 +160,8 @@ if [ -d "/fhem" ]; then
   if [ "${FHEM_CLEANINSTALL}" = '1' ]; then
     echo "$i. Installing FHEM to ${FHEM_DIR}"
     shopt -s dotglob nullglob 2>&1>/dev/null
-    mv -f /fhem/* ${FHEM_DIR}/ 2>&1>/dev/null
+    # was mv -f -> -n do not overwrite existing files
+    mv -n /fhem/* ${FHEM_DIR}/ 2>&1>/dev/null
     cd ${FHEM_DIR} 2>&1>/dev/null
     echo 'http://fhem.de/fhemupdate/controls_fhem.txt' > ./FHEM/controls.txt
     mv ./controls_fhem.txt ./FHEM/ 2>&1>/dev/null
